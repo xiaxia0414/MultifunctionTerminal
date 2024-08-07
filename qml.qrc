@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>HomeFlow.qml</file>
+        <file>image/1.svg</file>
+        <file>image/2.svg</file>
+        <file>image/3.svg</file>
+        <file>image/4.svg</file>
+        <file>image/5.svg</file>
+        <file>DynamicClock.qml</file>
+        <file>iconFont/Font Awesome 6 Free-Solid-900.otf</file>
+        <file>iconFont/Font Awesome 6 Brands-Regular-400.otf</file>
+        <file>iconFont/Font Awesome 6 Free-Regular-400.otf</file>
+        <file>iconFont/iconfont.ttf</file>
+        <file>StackSwith.qml</file>
+        <file>SmartHomePage.qml</file>
+        <file>ShadowCard.qml</file>
+        <file>image/airconditonner.png</file>
+        <file>image/lite.png</file>
+        <file>image/curtain.png</file>
+        <file>WeatherPage.qml</file>
+        <file>Global/qmldir</file>
+        <file>Global/Theme.qml</file>
+    </qresource>
+</RCC>
