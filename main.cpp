@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     QSurfaceFormat format;
     format.setSamples(8);
     QSurfaceFormat::setDefaultFormat(format);
+    WeatherServer* wserver = new WeatherServer();
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -30,9 +31,9 @@ int main(int argc, char *argv[])
         },
         Qt::QueuedConnection);
     engine.load(url);
+    qmlRegisterSingletonInstance("WeatherServer",1,0,"WeatherServer",wserver);
 
-    WeatherServer wserver;
-    wserver.getWeather();
+    wserver->getWeather();
 
 
     return app.exec();

@@ -69,6 +69,7 @@ QString WeatherServer::getCityID(QString city)
             }
         }
     }
+    //qDebug()<<cityID;
     return cityID;
 }
 
@@ -98,12 +99,18 @@ void WeatherServer::getWeather()
     QObject::connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
     loop.exec();
     BA = reply->readAll();
-    qDebug() << surl;
-    qDebug() << BA;
+    //qDebug() << surl;
+    //qDebug() << BA;
     log += surl + "\n";
     log += BA + "\n";
     JD = QJsonDocument::fromJson(BA, &JPE);
     QString weatherInfo(JD.toJson().data());
-    notifyCityWeatherJson(weatherInfo);
+    m_weatherJson = weatherInfo;
+    //qDebug()<<weatherInfo;
+}
+
+QString WeatherServer::getWeatherJson()
+{
+    return m_weatherJson;
 }
 

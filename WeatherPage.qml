@@ -1,10 +1,12 @@
 import QtQuick 2.15
 import QtGraphicalEffects 1.15
+import WeatherServer 1.0
 import "qrc:/Global/"
 Rectangle {
     id:root
     color:Theme.backgroundColor
     clip: true
+    property var jsonObj
     Grid
     {
         columns: 2
@@ -20,6 +22,14 @@ Rectangle {
             radius: 20
             clip: true
             layer.enabled: true
+            Text {
+                id: city_name
+                text: jsonObj.cityInfo.city
+                width: parent.width/2
+                height: parent.height/2
+                font.pixelSize: 40
+                color: Theme.accentColor
+            }
             layer.effect:DropShadow
             {
                 horizontalOffset: 0
@@ -65,6 +75,10 @@ Rectangle {
                 radius:8
                 color: Theme.shadowColor
             }
+        }
+        Component.onCompleted: {
+            var s = WeatherServer.getWeatherJson();
+           jsonObj = JSON.parse(s);
         }
 
     }
