@@ -2,11 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>HomeFlow.qml</file>
-        <file>image/1.svg</file>
-        <file>image/2.svg</file>
-        <file>image/3.svg</file>
-        <file>image/4.svg</file>
-        <file>image/5.svg</file>
         <file>DynamicClock.qml</file>
         <file>iconFont/Font Awesome 6 Free-Solid-900.otf</file>
         <file>iconFont/Font Awesome 6 Brands-Regular-400.otf</file>
@@ -21,5 +16,35 @@
         <file>WeatherPage.qml</file>
         <file>Global/qmldir</file>
         <file>Global/Theme.qml</file>
+        <file>image/WeatherImg/rijiantianqi-qing.png</file>
+        <file>image/WeatherImg/tianqi-baoxue.png</file>
+        <file>image/WeatherImg/tianqi-baoyu.png</file>
+        <file>image/WeatherImg/tianqi-baoyu1.png</file>
+        <file>image/WeatherImg/tianqi-bingbao.png</file>
+        <file>image/WeatherImg/tianqi-dabaoyu.png</file>
+        <file>image/WeatherImg/tianqi-daxue.png</file>
+        <file>image/WeatherImg/tianqi-daxue1.png</file>
+        <file>image/WeatherImg/tianqi-dayu.png</file>
+        <file>image/WeatherImg/tianqi-dayu1.png</file>
+        <file>image/WeatherImg/tianqi-duoyun.png</file>
+        <file>image/WeatherImg/tianqi-leiyu.png</file>
+        <file>image/WeatherImg/tianqi-leiyu1.png</file>
+        <file>image/WeatherImg/tianqi-shachen.png</file>
+        <file>image/WeatherImg/tianqi-shuang.png</file>
+        <file>image/WeatherImg/tianqitubiao_qing.png</file>
+        <file>image/WeatherImg/tianqi-wu.png</file>
+        <file>image/WeatherImg/tianqi-wumai.png</file>
+        <file>image/WeatherImg/tianqi-xiaoxue.png</file>
+        <file>image/WeatherImg/tianqi-xiaoxue1.png</file>
+        <file>image/WeatherImg/tianqi-xiaoyu.png</file>
+        <file>image/WeatherImg/tianqi-yangsha.png</file>
+        <file>image/WeatherImg/tianqi-yeduoyun.png</file>
+        <file>image/WeatherImg/tianqi-yintian.png</file>
+        <file>image/WeatherImg/tianqi-yujiaxue.png</file>
+        <file>image/WeatherImg/tianqi-yujiaxue1.png</file>
+        <file>image/WeatherImg/tianqi-zhongxue.png</file>
+        <file>image/WeatherImg/tianqi-zhongxue1.png</file>
+        <file>image/WeatherImg/tianqi-zhongyu.png</file>
+        <file>image/WeatherImg/tianqi-zhongyu1.png</file>
     </qresource>
 </RCC>

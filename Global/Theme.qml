@@ -7,7 +7,7 @@ Item {
     property color shadowColor:"#c4c4c4"
     property color cardColor:"#FFFFFF"
     property color normalColor:"#7F7F7F"
-    property color textColor: "#7F7F7F"
+    property color textColor: "#3C485C"
 
     function setBlackTheme()
     {
@@ -35,6 +35,10 @@ Item {
                 target: theme
                 cardColor:"#FFFFFF"
             }
+            PropertyChanges {
+                target: theme
+                textColor:"#3C485C"
+            }
         }
         ,
         State {
@@ -51,6 +55,10 @@ Item {
                 target: theme
                 cardColor:"#383838"
             }
+            PropertyChanges {
+                target: theme
+                textColor:"white"
+            }
         }
     ]
 
@@ -60,6 +68,7 @@ Item {
                     PropertyAnimation { target: theme; properties: "backgroundColor"; duration: 500 }
                     PropertyAnimation { target: theme; properties: "shadowColor"; duration: 500 }
                     PropertyAnimation { target: theme; properties: "cardColor"; duration: 500 }
+                    PropertyAnimation { target: theme; properties: "textColor"; duration: 500 }
             }
         ]
 
