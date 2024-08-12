@@ -46,5 +46,6 @@
         <file>image/WeatherImg/tianqi-zhongxue1.png</file>
         <file>image/WeatherImg/tianqi-zhongyu.png</file>
         <file>image/WeatherImg/tianqi-zhongyu1.png</file>
+        <file>WeatherLines.qml</file>
     </qresource>
 </RCC>

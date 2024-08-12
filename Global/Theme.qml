@@ -8,16 +8,22 @@ Item {
     property color cardColor:"#FFFFFF"
     property color normalColor:"#7F7F7F"
     property color textColor: "#3C485C"
+    property color redColor: "#DD568D"
+    property color blueColor: "#206DC0"
 
     function setBlackTheme()
     {
         theme.state = "blackTheme"
-        console.log(backgroundColor)
+        //console.log(backgroundColor)
+        themeChanged(theme.state)
     }
     function setlightTheme()
     {
         theme.state = "lightTheme"
+        themeChanged(theme.state)
     }
+
+    signal themeChanged(var state);
 
     states: [
         State {

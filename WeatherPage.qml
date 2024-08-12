@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtGraphicalEffects 1.15
 import WeatherServer 1.0
+import QtCharts 2.15
 import "qrc:/Global/"
 Rectangle {
     id:root
@@ -20,7 +21,7 @@ Rectangle {
     function loadWeatherViewModel()
     {
         for (var i = 0; i < jsonObj.data.forecast.length; i++) {
-            weather_all_model.append({date: jsonObj.data.forecast[i].ymd,
+            weather_all_model.append({date:jsonObj.data.forecast[i].ymd,
                                     week:jsonObj.data.forecast[i].week,
                                     high:jsonObj.data.forecast[i].high.slice(2),
                                     low:jsonObj.data.forecast[i].low.slice(2),
@@ -205,6 +206,12 @@ Rectangle {
             color:Theme.cardColor
             radius: 20
             clip: true
+            WeatherLines
+            {
+                anchors.fill: parent
+                weatherData: weather_all_model
+            }
+
             layer.enabled: true
             layer.effect:DropShadow
             {
@@ -213,6 +220,7 @@ Rectangle {
                 radius:8
                 color: Theme.shadowColor
             }
+
         }
         Component.onCompleted: {
             var s = WeatherServer.getWeatherJson();

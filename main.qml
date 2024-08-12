@@ -12,7 +12,7 @@ Window {
         anchors.fill: parent
         Component.onCompleted:
         {
-            Theme.setBlackTheme();
+            Theme.setlightTheme();
         }
         Button
         {
@@ -27,7 +27,13 @@ Window {
                 Theme.setlightTheme();
                 }
             }
+
         }
     }
+
+    // WeatherLines
+    // {
+    //     anchors.fill: parent
+    // }
 
 }
