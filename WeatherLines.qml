@@ -57,7 +57,10 @@ Rectangle
                     textctx.fillStyle = Theme.textColor; // 填充文字的颜色
                     textctx.fillText(tmp_high, point.x-5, point.y-10);
                     var s = weatherData.get(i).date.slice(5);
-                    textctx.fillText(s, point.x-15,40)
+                    var textctx2 = getContext("2d");
+                    textctx2.font = "15px Arial";
+                    textctx2.fillStyle = Theme.textColor;
+                    textctx2.fillText(s, point.x-15,25)
 
                    if(i>0)
                    {

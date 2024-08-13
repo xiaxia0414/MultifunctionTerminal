@@ -3,6 +3,13 @@ import QtQuick.Controls 2.15
 Rectangle
 {
    // property bool isHomePage: stack_view.depth == 1 ? true:false
+    function popPage()
+    {
+        if(stack_view.depth>1)
+        {
+             stack_view.pop()
+        }
+    }
     StackView
     {
         id:stack_view

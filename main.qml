@@ -2,35 +2,27 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import "qrc:/Global/"
-Window {
+ApplicationWindow  {
     width: 800
     height: 480
     visible: true
     title: qsTr("Hello World")
     StackSwith
     {
+        id:stack_swith
         anchors.fill: parent
         Component.onCompleted:
         {
             Theme.setlightTheme();
         }
-        Button
+        SuspendRoundToolbar
         {
-            id:themeSwithBtn
-            anchors.bottom: parent.bottom
-            onClicked:
-            {
-                if(Theme.state == "lightTheme")
-                {Theme.setBlackTheme()}
-                else
-                {
-                Theme.setlightTheme();
-                }
-            }
-
+            id:suspend_bar
+            stackSwith:stack_swith
+            foreColor: Theme.accentColor
         }
-    }
 
+    }
     // WeatherLines
     // {
     //     anchors.fill: parent

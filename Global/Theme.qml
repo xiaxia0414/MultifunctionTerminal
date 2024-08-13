@@ -10,7 +10,8 @@ Item {
     property color textColor: "#3C485C"
     property color redColor: "#DD568D"
     property color blueColor: "#206DC0"
-
+    property color itemPressedColor: "#EBEBEB"
+    property var themeState: theme.state
     function setBlackTheme()
     {
         theme.state = "blackTheme"
@@ -31,6 +32,7 @@ Item {
             PropertyChanges {
                 target: theme
                 backgroundColor:"#F5F7FB"
+                itemPressedColor:"#3C485C"
             }
             PropertyChanges {
                 target: theme
@@ -45,6 +47,7 @@ Item {
                 target: theme
                 textColor:"#3C485C"
             }
+
         }
         ,
         State {
@@ -52,6 +55,7 @@ Item {
             PropertyChanges {
                 target: theme
                 backgroundColor:"#121212"
+                itemPressedColor:"#121212"
             }
             PropertyChanges {
                 target: theme
@@ -75,6 +79,7 @@ Item {
                     PropertyAnimation { target: theme; properties: "shadowColor"; duration: 500 }
                     PropertyAnimation { target: theme; properties: "cardColor"; duration: 500 }
                     PropertyAnimation { target: theme; properties: "textColor"; duration: 500 }
+                    PropertyAnimation { target: theme; properties: "itemPressedColor"; duration: 500 }
             }
         ]
 

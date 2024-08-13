@@ -30,17 +30,14 @@ Rectangle {
         }
     }
 
-    Grid
-    {
-        columns: 2
-        anchors.fill:parent
-        spacing: 20
-        anchors.margins: 20
+
         Rectangle
         {
             id:weatherToday_card
             width: 200
             height: 200
+            x:20
+            y:20
             color:Theme.cardColor
             radius: 20
             clip: true
@@ -105,8 +102,11 @@ Rectangle {
         Rectangle
         {
             id:weather_all
+            anchors.top:  weatherToday_card.top
             anchors.left: weatherToday_card.right
             anchors.leftMargin: 20
+            anchors.right: parent.right
+            anchors.rightMargin: 20
             width: parent.width-weatherToday_card.width-20
             height: weatherToday_card.height
             color:Theme.cardColor
@@ -201,6 +201,12 @@ Rectangle {
             id:weather_crve
             anchors.top: weatherToday_card.bottom
             anchors.topMargin: 20
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 20
+            anchors.left: parent.left
+            anchors.leftMargin: 20
+            anchors.right: parent.right
+            anchors.rightMargin: 20
             width: parent.width
             height:parent.height - weatherToday_card.height -20
             color:Theme.cardColor
@@ -228,6 +234,5 @@ Rectangle {
             loadWeatherViewModel();
         }
 
-    }
 
 }
