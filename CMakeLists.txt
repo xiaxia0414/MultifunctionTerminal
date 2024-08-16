@@ -10,15 +10,25 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick Gui)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS QuickControls2)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Network)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Multimedia)
+
 
 
 set(PROJECT_SOURCES
         main.cpp
         qml.qrc
 )
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}/mediumDecode
+    ${PROJECT_SOURCE_DIR}/ffmpeg/include)
+
+link_directories(${PROJECT_SOURCE_DIR}/ffmpeg/lib)
+
+add_subdirectory(mediumDecode)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(qml_HomeFlow
@@ -40,12 +50,18 @@ else()
         add_executable(qml_HomeFlow
           ${PROJECT_SOURCES}
           weatherserver.h weatherserver.cpp
+          videooutput.h videooutput.cpp
         )
     endif()
 endif()
 
 target_link_libraries(qml_HomeFlow
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2 Qt${QT_VERSION_MAJOR}::Network)
+  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2 Qt${QT_VERSION_MAJOR}::Network
+  Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::Multimedia
+  mediumDecode
+)
+
+
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

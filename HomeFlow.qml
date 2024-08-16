@@ -174,6 +174,9 @@ Rectangle {
             pageUrl:"qrc:/WeatherPage.qml"
             info:"天气"
             }
+            ListElement{url:"\ue637"
+            pageUrl:"qrc:/VideoPlayerPage.qml"
+            info:"视频"}
             ListElement{url:"\ue63b"
             pageUrl:"qrc:/SmartHomePage.qml"
             info:"音乐"}

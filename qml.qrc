@@ -48,5 +48,6 @@
         <file>image/WeatherImg/tianqi-zhongyu1.png</file>
         <file>WeatherLines.qml</file>
         <file>SuspendRoundToolbar.qml</file>
+        <file>VideoPlayerPage.qml</file>
     </qresource>
 </RCC>

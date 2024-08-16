@@ -3,6 +3,7 @@
 #include <QSurfaceFormat>
 #include <QFontDatabase>
 #include <QQuickStyle>
+#include "videooutput.h"
 #include "weatherserver.h"
 int main(int argc, char *argv[])
 {
@@ -32,6 +33,7 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.load(url);
     qmlRegisterSingletonInstance("WeatherServer",1,0,"WeatherServer",wserver);
+    qmlRegisterType<VideoOutput>("VideoOutput", 1, 0,"VideoOutput");
 
     wserver->getWeather();
 
