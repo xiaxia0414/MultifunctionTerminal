@@ -38,6 +38,7 @@ VideoOutput::VideoOutput() {
     // });
      m_videoDecoder->open("C:\\Users\\intern04\\Documents\\Tencent Files\\2843897187\\FileRecv\\MobileFile\\VID20240728154701.mp4");
      m_audioDecoder->open("C:\\Users\\intern04\\Documents\\Tencent Files\\2843897187\\FileRecv\\MobileFile\\VID20240728154701.mp4");
+
 }
 
 void VideoOutput::paint(QPainter *painter)
@@ -50,7 +51,7 @@ void VideoOutput::paint(QPainter *painter)
 
 void VideoOutput::playVideo()
 {
-    qDebug()<<m_videoDecoder->fps();
+    qDebug()<<1000.0/m_videoDecoder->fps();
     m_videotimer->start(1000.0/m_videoDecoder->fps());
 }
 

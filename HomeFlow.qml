@@ -184,6 +184,7 @@ Rectangle {
             pageUrl:"qrc:/SmartHomePage.qml"
             info:"设置"
             }
+
         }
         path:Path {
             startX: 0;
