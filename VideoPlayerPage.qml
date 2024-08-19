@@ -13,10 +13,12 @@ Rectangle
     }
     Button
     {
+        id:video_button
         text: "开始播放"
         onClicked:
         {
             video_outPut.playVideo();
+            video_outPut.playAudio();
         }
     }
 

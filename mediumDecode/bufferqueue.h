@@ -8,10 +8,11 @@
 #include "semaphore.h"
 #include <vector>
 #include <QDebug>
+static int num =0;
 template <class T> class BufferQueue
 {
 public:
-    BufferQueue(int bufferSize = 100) {
+    BufferQueue(int bufferSize = 200) {
         setBufferSize(bufferSize);
     }
 
@@ -28,14 +29,16 @@ public:
         m_front = m_rear = 0;
     }
 
-    void enqueue(const T &element) {
+    void enqueue(const T &element){
 #ifdef DEBUG_OUTPUT
         std::cout << "[freespace " << m_freeSpace.available()
                   << "] --- [useablespace " << m_useableSpace.available() << "]" << std::endl;
 #endif
         m_freeSpace.acquire();
         m_bufferQueue[m_front++ % m_bufferSize] = element;
-        qDebug()<<m_front;
+        num ++;
+
+        qDebug()<<num;
         m_useableSpace.release();
     }
 

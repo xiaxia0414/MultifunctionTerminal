@@ -105,6 +105,10 @@ void VideoDecoder::demuxing_decoding()
     fflush(stderr);
 
     m_fps = videoStream->avg_frame_rate.num / videoStream->avg_frame_rate.den;
+    qDebug()<<videoStream->avg_frame_rate.num<< videoStream->avg_frame_rate.den;
+    int64_t duration = formatContext->duration;
+    int64_t totalFrames = videoStream->nb_frames;
+    qDebug()<<duration<<totalFrames;
     m_width = codecContext->width;
     m_height = codecContext->height;
 

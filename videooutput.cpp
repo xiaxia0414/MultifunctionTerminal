@@ -16,8 +16,6 @@ VideoOutput::VideoOutput() {
     //        m_videotimer->start((1000/m_videoDecoder->fps()));
     //    // });
     // });
-
-
     connect(m_audioTimer, &QTimer::timeout, this, [this](){
         if (m_audioFrame.size() < m_audioOutput->bytesFree()) {
             m_audioFrame += m_audioDecoder->currentFrame();
@@ -52,13 +50,14 @@ void VideoOutput::paint(QPainter *painter)
 
 void VideoOutput::playVideo()
 {
-    m_videotimer->start((1000/m_videoDecoder->fps()));
+    qDebug()<<m_videoDecoder->fps();
+    m_videotimer->start(1000.0/m_videoDecoder->fps());
 }
 
 void VideoOutput::playAudio()
 {
     // if (m_audioOutput) m_audioOutput->deleteLater();
-    // m_audioOutput = new QAudioOutput(m_audioOutput->format());
+    // m_audioOutput = new QAudioOutput(m_audioDecoder->format());
     // m_device = m_audioOutput->start();
     // m_audioTimer->start(10);
 }
